@@ -1,4 +1,4 @@
-# Flux-capacitr
+# UberDictionary
 
 [Heroku link][heroku]
 
