@@ -1,0 +1,23 @@
+<h1>New User</h1>
+
+<% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+<% end %>
+
+<form class="signup-form" action="/users" method="post">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  User Name: <br>
+  <input type="text" name="user[user_name]" value="">
+  <br> User Email: <br>
+  <input type="text" name="user[user_email]" value="">
+  <br> Password: <br>
+  <input type="password" name="user[password]" value="">
+   <br>
+  <button>Create User!</button>
+</form>
+<a href="/session/new">Already a user?</a>
+<br>
+<a href="/users"> Users</a>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Word:</strong>
+  <%= @def.word %>
+</p>
+
+<p>
+  <strong>Def:</strong>
+  <%= @def.def %>
+</p>
+
+<p>
+  <strong>Ex sentence:</strong>
+  <%= @def.ex_sentence %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @def.author_id %>
+</p>
+
+<p>
+  <strong>Img url:</strong>
+  <%= @def.img_url %>
+</p>
+
+<%= link_to 'Edit', edit_def_path(@def) %> |
+<%= link_to 'Back', defs_path %>

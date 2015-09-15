@@ -1,0 +1,20 @@
+<h1>Log In</h1>
+
+<% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+<% end %>
+
+<form class="login-form" action="/session" method="post">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  User Email: <br>
+  <input type="text" name="user[user_email]" value="">
+  <br> Password: <br>
+  <input type="password" name="user[password]" value="">
+   <br>
+  <button>Log In!</button>
+</form>
+
+<a href="/users/new"> New User?</a>
