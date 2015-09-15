@@ -1,11 +1,11 @@
 class DefsController < ApplicationController
   before_action :set_def, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_logged_in, only: [:edit, :update, :destroy]
 
   # GET /defs
   # GET /defs.json
   def index
     @defs = Def.all
-    render json: @defs
   end
 
   # GET /defs/1
