@@ -1,8 +1,8 @@
-class CreateDefs < ActiveRecord::Migration
+class CreateDefins < ActiveRecord::Migration
   def change
-    create_table :defs do |t|
+    create_table :defins do |t|
       t.string :word
-      t.text :def
+      t.text :defin
       t.string :ex_sentence
       t.integer :author_id
       t.string :img_url

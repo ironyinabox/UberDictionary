@@ -1,0 +1,21 @@
+<p>
+  <strong>Word:</strong>
+  <%= @defin.word %>
+</p>
+
+<p>
+  <strong>Definition:</strong>
+  <%= @defin.defin %>
+</p>
+
+<p>
+  <strong>Ex sentence:</strong>
+  <%= @defin.ex_sentence %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%=User.find(@defin.author_id).user_name %>
+</p>
+
+<a href="<%=defins_url%>"></a>

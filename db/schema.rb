@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 20150915161726) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "defs", force: :cascade do |t|
+  create_table "defins", force: :cascade do |t|
     t.string   "word"
-    t.text     "def"
+    t.text     "defin"
     t.string   "ex_sentence"
     t.integer  "author_id"
     t.string   "img_url"
