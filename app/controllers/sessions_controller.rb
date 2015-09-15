@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     @user = User.find_by_creds(email_input, pass_input)
     if @user
       login(@user)
-      redirect_to user_url(@user)
+      redirect_to root_url
     else
       render :new
     end

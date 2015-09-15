@@ -7,5 +7,5 @@ Rails.application.routes.draw do
    resources :defins
   end
 
-  root 'sessions#new'
+  root 'static_pages#root'
 end

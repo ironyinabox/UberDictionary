@@ -3,27 +3,19 @@ module Api
     before_action :set_defin, only: [:show, :edit, :update, :destroy]
     before_action :ensure_logged_in, only: [:new, :create]
 
-    # GET /defins
-    # GET /defins.json
     def index
       @defins = Defin.all
       render json: @defins
     end
 
-    # GET /defins/1
-    # GET /defins/1.json
     def show
       render json: @defin
     end
 
-    # GET /defins/new
     def new
       @defin = Defin.new
     end
 
-
-    # POST /defins
-    # POST /defins.json
     def create
       @defin = Defin.new(defin_params)
       if @defin.save
@@ -33,8 +25,6 @@ module Api
       end
     end
 
-    # PATCH/PUT /defins/1
-    # PATCH/PUT /defins/1.json
     def update
       if @defin.update(defin_params)
         render json: @defin
