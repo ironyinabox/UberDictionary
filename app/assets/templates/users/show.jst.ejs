@@ -1,17 +1,16 @@
-<h1>Listing All Defins</h1>
+<h1> Listing <%=user.escape('user_name')%>'s defins </h1>
 <ul class="defin-list">
-<% defins.forEach(function(defin) { %>
+<% user.defins().forEach(function(defin) { %>
   <li class="defin">
     <div class="word"><%= defin.escape('word') %></div>
     <br>
     <div class="def"><%= defin.escape('defin') %> </div>
     <br>
     <div class="example"> <%= defin.escape('ex_sentence') %></div> <br>
-    <strong>
-    by <a href="<%='#/users/' + defin.get('author_id')%>"><%= defin.author().get('user_name') %></a>
-    </strong>
+    <br>
+    <button class="delete-button" data-id="<%=defin.get('id')%>"> Delete</button>
   </li>
-<% }) %>
+<%  })  %>
 </ul>
-
-<a href="#/defins/new"> New Def</a>
+<br>
+<a href="#">Back</a>

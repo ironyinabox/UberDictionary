@@ -14,14 +14,15 @@ UberDictionary.Views.DefinsNew = Backbone.View.extend({
 
   submit: function (e) {
     e.preventDefault();
+    var that = this;
     var data = $(e.currentTarget).serializeJSON();
-    debugger
     this.model.save(data.defin, {
       success: function (defin) {
+        that.collection.add(defin);
         Backbone.history.navigate('', { trigger: true })
       },
-      error: function () {
-        alert("you got probs")
+      error: function (defin) {
+        alert("Must be logged in and complete all fields")
       }
     });
   }

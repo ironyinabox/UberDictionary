@@ -7,7 +7,7 @@
     </ul>
 <% end %>
 
-<form class="login-form" action="/session" method="post">
+<form class="login-form" action="<%= session_url %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
   User Email: <br>
   <input type="text" name="user[user_email]" value="">

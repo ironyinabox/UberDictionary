@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       login(@user)
       redirect_to root_url
     else
-      render :new
+      redirect_to new_session_url
     end
   end
 

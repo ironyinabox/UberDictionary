@@ -1,8 +1,9 @@
 UberDictionary.Views.DefinsIndex = Backbone.View.extend({
 
   template: JST['defins/index'],
+
   initialize: function (options) {
-    this.listenTo(this.collection, 'sync', this.render)
+    this.listenTo(this.collection, 'sync destroy', this.render)
   },
 
   render: function () {
@@ -10,5 +11,4 @@ UberDictionary.Views.DefinsIndex = Backbone.View.extend({
     this.$el.html(content);
     return this;
   }
-
 });

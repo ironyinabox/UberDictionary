@@ -5,11 +5,11 @@ module Api
 
     def index
       @defins = Defin.all
-      render json: @defins
+      render :index
     end
 
     def show
-      render json: @defin
+      render :show
     end
 
     def new
