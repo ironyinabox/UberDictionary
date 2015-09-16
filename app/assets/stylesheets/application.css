@@ -17,8 +17,8 @@
 
  html, body, header, nav, h1,
  ul, main, i,
- section, img, div, h2, p, form,
- fieldset, label, input, textarea,
+ section, img, div, h2, p,
+ fieldset, label, textarea,
  span, article, footer, time, small {
    padding: 0;
    border: 0;
