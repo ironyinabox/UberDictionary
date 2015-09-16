@@ -1,7 +1,7 @@
 module Api
   class DefinsController < ApiController
     before_action :set_defin, only: [:show, :edit, :update, :destroy]
-    before_action :ensure_logged_in, only: [:new, :create]
+    # before_action :ensure_logged_in, only: [:new, :create]
 
     def index
       @defins = Defin.all
@@ -17,20 +17,17 @@ module Api
     end
 
     def create
-      @defin = Defin.new(defin_params)
+      @defin = current_user.defins.new(defin_params)
       if @defin.save
         render json: @defin
       else
-        redirect_to new_defin_url
+        render json: @defin.errors.full_messages, status: :unprocessable_entity
       end
     end
 
-    def update
-      if @defin.update(defin_params)
-        render json: @defin
-      else
-        redirect_to edit_defin_url
-      end
+    def destroy
+      @defin.destroy
+      render json: {}
     end
 
     private
@@ -39,7 +36,7 @@ module Api
     end
 
     def defin_params
-      params.require(:defin).permit(:word, :defin, :ex_sentence, :author_id, :img_url)
+      params.require(:defin).permit(:word, :defin, :ex_sentence, :img_url)
     end
   end
 end

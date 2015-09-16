@@ -6,11 +6,22 @@ UberDictionary.Routers.Defins = Backbone.Router.extend({
   },
 
   routes: {
-    '': "definsIndex"
+    '': 'definsIndex',
+    'defins/new': 'definsNew',
+    'defins/:id': 'definsShow'
   },
 
   definsIndex: function () {
     var view = new UberDictionary.Views.DefinsIndex({
+      collection: this.collection
+    });
+    this._swapView(view);
+  },
+
+  definsNew: function () {
+    var defin = new UberDictionary.Models.Defin();
+    var view = new UberDictionary.Views.DefinsNew({
+      model: defin,
       collection: this.collection
     });
     this._swapView(view);

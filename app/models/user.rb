@@ -5,7 +5,9 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
-  has_many :defins
+  has_many :defins,
+  class_name: "Defin",
+  foreign_key: :author_id
 
   attr_reader :password
 
