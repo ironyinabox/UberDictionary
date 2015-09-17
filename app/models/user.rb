@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   class_name: "Defin",
   foreign_key: :author_id
 
+  has_many :votes
+
   attr_reader :password
 
   def password=(password)

@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]: http://flux-capacitr.herokuapp.com
+[heroku]: http://uberdictionary.herokuapp.com/
 
 ## Minimum Viable Product
 UberDictionary is a clone of UrbanDictionary built on Rails and Backbone. Users can:

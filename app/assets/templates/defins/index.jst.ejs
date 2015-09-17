@@ -9,7 +9,8 @@
     <div class="example"> <%= defin.escape('ex_sentence') %></div> <br>
     <strong>
     by <a href="<%='#/users/' + defin.get('author_id')%>"><%= defin.author().get('user_name') %></a>
-    </strong>
+  </strong> <br>
+    <button class="upvote">Thumbs Up</button> <button class="downvote">Thumbs Down</button>
   </li>
 <% }) %>
 </ul>
