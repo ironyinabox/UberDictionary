@@ -5,19 +5,9 @@ module Api
     def index
       @votes = Vote.all
     end
-    
+
     def create
-      @vote = current_user.votes.new(vote_params)
-      if @vote.save
-        render :show
-      else
-        render json: @vote.errors, status: :unprocessable_entity
-      end
-
-    end
-
-    def update
-      @vote = Vote.find(params[:id])
+      @vote = current_user.votes.find_or_initialize_by(defin_id: params[:vote][:defin_id])
       if @vote.update(vote_params)
         render :show
       else
@@ -25,9 +15,18 @@ module Api
       end
     end
 
+    # def update
+    #   @vote = Vote.find(params[:id])
+    #   if @vote.update(vote_params)
+    #     render :show
+    #   else
+    #     render json: @vote.errors, status: :unprocessable_entity
+    #   end
+    # end
+
     private
       def vote_params
-        params.require(:vote).permit(:upvote, :user_id, :defin_id)
+        params.require(:vote).permit(:upvote)
       end
   end
 end
