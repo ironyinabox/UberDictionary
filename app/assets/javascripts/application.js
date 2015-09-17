@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require underscore
 //= require backbone
+//= require composite.js
 //= require uber_dictionary
 //= require_tree ../templates
 //= require_tree ./models

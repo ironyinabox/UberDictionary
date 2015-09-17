@@ -1,16 +1,4 @@
 <h1> Listing <%=user.escape('user_name')%>'s defins </h1>
-<ul class="defin-list">
-<% user.defins().forEach(function(defin) { %>
-  <li class="defin">
-    <div class="word"><%= defin.escape('word') %></div>
-    <br>
-    <div class="def"><%= defin.escape('defin') %> </div>
-    <br>
-    <div class="example"> <%= defin.escape('ex_sentence') %></div> <br>
-    <br>
-    <button class="delete-button" data-id="<%=defin.get('id')%>"> Delete</button>
-  </li>
-<%  })  %>
-</ul>
+<ul class="defin-list"> </ul>
 <br>
 <a href="#">Back</a>

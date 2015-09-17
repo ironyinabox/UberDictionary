@@ -3,7 +3,7 @@ UberDictionary.Models.User = Backbone.Model.extend({
 
   parse: function (res) {
     if (res.defins) {
-      this.defins().set(res.defins);
+      this.defins().set(res.defins, { parse: true });
       delete res.defins;
     }
 

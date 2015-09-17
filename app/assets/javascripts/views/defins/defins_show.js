@@ -3,14 +3,18 @@ UberDictionary.Views.DefinsShow = Backbone.View.extend({
   template: JST['defins/show'],
   tagName: 'li',
   className: 'defin',
-
-  // events: {
-  //   'click .upvote': 'upvoteDefin',
-  //   'click .downvote': 'downvoteDefin'
-  // },
+  events: {
+    'click .upvote': 'upvoteDefin',
+    'click .downvote': 'downvoteDefin'
+  },
 
   initialize: function (options) {
-    this.listenTo(this.model, 'sync destroy', this.render)
+    this.vote = new UberDictionary.Models.Vote({
+      defin_id: this.model.get('id')
+    });
+    this.listenTo(this.model, 'sync destroy', this.render);
+    this.listenTo(this.vote, 'change', this.render)
+
   },
 
   render: function () {
@@ -18,23 +22,16 @@ UberDictionary.Views.DefinsShow = Backbone.View.extend({
     this.$el.html(content);
     return this;
   },
+
   upvoteDefin: function (e) {
     e.preventDefault;
-    var id = $(e.currentTarget).data('id')
-    var vote = new UberDictionary.Models.Vote({
-      defin_id: id
-    });
-    vote.set({ upvote: true });
-    vote.save();
+    this.vote.set({ upvote: true });
+    this.vote.save();
   },
 
   downvoteDefin: function (e) {
     e.preventDefault;
-    var id = $(e.currentTarget).data('id')
-    var vote = new UberDictionary.Models.Vote({
-      defin_id: id
-    });
-    vote.set({ upvote: false });
-    vote.save();
+    this.vote.set({ upvote: false });
+    this.vote.save();
   }
 });

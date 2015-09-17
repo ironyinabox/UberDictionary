@@ -69,3 +69,8 @@
  .defin > strong {
    margin-left: 10px;
  }
+
+ .app-title {
+   font-size: 40px;
+   font-weight: bolder;
+ }

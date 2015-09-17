@@ -27,15 +27,6 @@ UberDictionary.Routers.Defins = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  definsShow: function (id) {
-    var model = this.collection.getOrFetch(id);
-    var view = new UberDictionary.Views.DefinsShow({
-      model: model,
-      collection: this.collection
-    });
-    this._swapView(view);
-  },
-
   _swapView: function (view) {
     this._currentView && this._currentView.remove();
     this._currentView = view;

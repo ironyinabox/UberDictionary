@@ -1,11 +1,7 @@
-UberDictionary.Views.DefinsIndex = Backbone.View.extend({
+UberDictionary.Views.DefinsIndex = Backbone.CompositeView.extend({
 
   template: JST['defins/index'],
 
-  events: {
-    'click .upvote': 'upvoteDefin',
-    'click .downvote': 'downvoteDefin'
-  },
 
   initialize: function (options) {
     this.listenTo(this.collection, 'sync destroy', this.render)
@@ -14,25 +10,21 @@ UberDictionary.Views.DefinsIndex = Backbone.View.extend({
   render: function () {
     var content = this.template({ defins: this.collection });
     this.$el.html(content);
+    this.renderDefins();
     return this;
   },
-  upvoteDefin: function (e) {
-    e.preventDefault;
-    var id = $(e.currentTarget).data('id')
-    var vote = new UberDictionary.Models.Vote({
-      defin_id: id
+
+  addDefin: function (defin) {
+    var view = new UberDictionary.Views.DefinsShow({
+      model: defin
     });
-    vote.set({ upvote: true });
-    vote.save();
+
+    this.addSubview('.defin-list', view)
   },
 
-  downvoteDefin: function (e) {
-    e.preventDefault;
-    var id = $(e.currentTarget).data('id')
-    var vote = new UberDictionary.Models.Vote({
-      defin_id: id
-    });
-    vote.set({ upvote: false });
-    vote.save();
+  renderDefins: function () {
+    this.collection.each(this.addDefin.bind(this));
   }
+
+
 });

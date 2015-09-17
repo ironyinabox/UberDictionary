@@ -1,26 +1,4 @@
 <h1>Listing All Defins</h1>
-<ul class="defin-list">
-<% defins.forEach(function(defin) { %>
-  <li class="defin">
-    <div class="word"><%= defin.escape('word') %></div>
-    <br>
-    <div class="def"><%= defin.escape('defin') %> </div>
-    <br>
-    <div class="example"> <%= defin.escape('ex_sentence') %></div> <br>
-    <strong>
-    by <a
-      href="<%='#/users/' + defin.get('author_id')%>">
-      <%= defin.author().get('user_name') %>
-      </a>
-      <%= new Date(defin.get('created_at')).toDateString() %>
-  </strong>
-  <br>
-    <button class="upvote" data-id="<%=defin.get('id') %>">Thumbs Up</button>
-    <%= defin.votes().get('up_count') %>
-    <button class="downvote" data-id="<%=defin.get('id') %>">Thumbs Down</button>
-    <%= defin.votes().get('down_count') %>
-  </li>
-<% }) %>
-</ul>
-
+<ul class="defin-list"></ul>
+<br>
 <a href="#/defins/new"> New Def</a>
