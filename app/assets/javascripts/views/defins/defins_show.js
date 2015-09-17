@@ -1,18 +1,20 @@
-UberDictionary.Views.DefinsIndex = Backbone.View.extend({
+UberDictionary.Views.DefinsShow = Backbone.View.extend({
 
-  template: JST['defins/index'],
+  template: JST['defins/show'],
+  tagName: 'li',
+  className: 'defin',
 
-  events: {
-    'click .upvote': 'upvoteDefin',
-    'click .downvote': 'downvoteDefin'
-  },
+  // events: {
+  //   'click .upvote': 'upvoteDefin',
+  //   'click .downvote': 'downvoteDefin'
+  // },
 
   initialize: function (options) {
-    this.listenTo(this.collection, 'sync destroy', this.render)
+    this.listenTo(this.model, 'sync destroy', this.render)
   },
 
   render: function () {
-    var content = this.template({ defins: this.collection });
+    var content = this.template({ defin: this.model });
     this.$el.html(content);
     return this;
   },

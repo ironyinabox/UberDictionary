@@ -9,8 +9,19 @@ UberDictionary.Models.Defin = Backbone.Model.extend({
       this.author().set(res.author);
       delete res.author;
     }
+    if (res.votes) {
+      this.votes().set(res.votes)
+      delete res.votes
+    }
 
     return res;
+  },
+
+  votes: function () {
+    this._votes = this._votes ||
+      new UberDictionary.Collections.Votes([],{ defin: this });
+
+    return this._votes
   },
 
   author: function () {

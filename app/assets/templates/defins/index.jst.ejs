@@ -16,7 +16,9 @@
   </strong>
   <br>
     <button class="upvote" data-id="<%=defin.get('id') %>">Thumbs Up</button>
+    <%= defin.votes().get('up_count') %>
     <button class="downvote" data-id="<%=defin.get('id') %>">Thumbs Down</button>
+    <%= defin.votes().get('down_count') %>
   </li>
 <% }) %>
 </ul>
