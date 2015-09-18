@@ -1,7 +1,5 @@
 module Api
   class DefinsController < ApiController
-    before_action :set_defin, only: [:show, :edit, :update, :destroy]
-    # before_action :ensure_logged_in, only: [:new, :create]
 
     def index
       @defins = Defin.all
@@ -9,6 +7,7 @@ module Api
     end
 
     def show
+      @defin = Defin.find(params[:id])
       render :show
     end
 
@@ -26,15 +25,12 @@ module Api
     end
 
     def destroy
+      @defin = Defin.find(params[:id])
       @defin.destroy
       render json: {}
     end
 
     private
-    def set_defin
-      @defin = Defin.find(params[:id])
-    end
-
     def defin_params
       params.require(:defin).permit(:word, :defin, :ex_sentence, :img_url)
     end

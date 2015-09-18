@@ -2,7 +2,6 @@ UberDictionary.Views.DefinsIndex = Backbone.CompositeView.extend({
 
   template: JST['defins/index'],
 
-
   initialize: function (options) {
     this.listenTo(this.collection, 'sync destroy', this.render)
   },
@@ -25,6 +24,4 @@ UberDictionary.Views.DefinsIndex = Backbone.CompositeView.extend({
   renderDefins: function () {
     this.collection.each(this.addDefin.bind(this));
   }
-
-
 });

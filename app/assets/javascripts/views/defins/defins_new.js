@@ -19,6 +19,7 @@ UberDictionary.Views.DefinsNew = Backbone.View.extend({
     this.model.save(data.defin, {
       success: function (defin) {
         that.collection.add(defin);
+        defin.fetch();
         Backbone.history.navigate('', { trigger: true })
       },
       error: function (defin) {

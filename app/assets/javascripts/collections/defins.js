@@ -1,5 +1,6 @@
 UberDictionary.Collections.Defins = Backbone.Collection.extend({
   url: '/api/defins',
+
   model: UberDictionary.Models.Defin,
   getOrFetch: function (id) {
     var collection = this;
@@ -18,5 +19,4 @@ UberDictionary.Collections.Defins = Backbone.Collection.extend({
 
     return model;
   }
-
 });

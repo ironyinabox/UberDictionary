@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json} do
     resources :votes, only: [:create, :update, :index]
     resources :defins
-    resources :users, only: [:show, :edit, :index]
+    resources :users, only: [:show, :edit, :index, :create]
   end
 
   root 'static_pages#root'

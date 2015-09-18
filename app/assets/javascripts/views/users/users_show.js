@@ -2,10 +2,6 @@ UberDictionary.Views.UsersShow = Backbone.CompositeView.extend({
 
   template: JST['users/show'],
 
-  // events: {
-  //   'click .delete-button': 'deleteWord'
-  // },
-
   initialize: function (options) {
     this.defins = this.model.defins();
     this.listenTo(this.model, 'sync', this.render);
@@ -30,15 +26,5 @@ UberDictionary.Views.UsersShow = Backbone.CompositeView.extend({
   renderDefins: function () {
     this.defins.each(this.addDefin.bind(this));
   }
-
-  // deleteWord: function (e) {
-  //   e.preventDefault();
-  //   var definId = $(e.currentTarget).data('id');
-  //   this.defins.get(definId).destroy({
-  //     success: function (defin) {
-  //       this.defins.remove(defin);
-  //     }
-  //   });
-  // }
 
 });

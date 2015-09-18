@@ -6,12 +6,22 @@ UberDictionary.Routers.Users = Backbone.Router.extend({
   },
 
   routes: {
+    'users/new': 'usersNew',
     'users/:id': 'usersShow'
   },
 
   usersShow: function (id) {
     var model = this.collection.getOrFetch(id);
     var view = new UberDictionary.Views.UsersShow({
+      model: model,
+      collection: this.collection
+    });
+    this._swapView(view);
+  },
+
+  usersNew: function (id) {
+    var model = new UberDictionary.Models.User();
+    var view = new UberDictionary.Views.UsersNew({
       model: model,
       collection: this.collection
     });

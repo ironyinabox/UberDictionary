@@ -1,6 +1,5 @@
 module Api
   class UsersController < ApiController
-    before_action :set_user, only: [:show, :edit, :update, :destroy]
 
     def index
       @users = User.all
@@ -8,43 +7,25 @@ module Api
     end
 
     def show
+      @user = User.find(params[:id])
     end
 
     def new
       @user = User.new
     end
 
-    def edit
-    end
-
     def create
       @user = User.new(user_params)
         if @user.save
           login(@user)
-          redirect_to root_url
+          render json: @user
         else
-          redirect_to new_user_url
+          render json: @user.errors.full_messages, status: :unprocessable_entity
         end
     end
 
-    def update
-      if @user.update(user_params)
-        render :show
-      else
-        render :edit
-      end
-    end
-
-    def destroy
-      @user.destroy
-      render :index
-    end
-
     private
-      def set_user
-        @user = User.find(params[:id])
-      end
-
+    
       def user_params
         params.require(:user).permit(:user_name, :password, :user_email)
       end

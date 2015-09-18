@@ -13,8 +13,6 @@ UberDictionary.Views.DefinsShow = Backbone.View.extend({
       defin_id: this.model.get('id')
     });
     this.listenTo(this.model, 'sync destroy', this.render);
-    this.listenTo(this.vote, 'change', this.render)
-
   },
 
   render: function () {
@@ -25,13 +23,21 @@ UberDictionary.Views.DefinsShow = Backbone.View.extend({
 
   upvoteDefin: function (e) {
     e.preventDefault;
-    this.vote.set({ upvote: true });
-    this.vote.save();
+    this.makeVote(true);
   },
 
   downvoteDefin: function (e) {
     e.preventDefault;
-    this.vote.set({ upvote: false });
-    this.vote.save();
+    this.makeVote(false);
+  },
+
+  makeVote: function (value) {
+    var that = this;
+    this.vote.set({ upvote: value });
+    this.vote.save({}, {
+      success: function () {
+        that.model.fetch();
+      }
+    });
   }
 });

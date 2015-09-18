@@ -1,6 +1,5 @@
 module Api
   class VotesController < ApiController
-    before_action :set_vote, only: [:update]
 
     def index
       @votes = Vote.all
@@ -14,15 +13,6 @@ module Api
         render json: @vote.errors, status: :unprocessable_entity
       end
     end
-
-    # def update
-    #   @vote = Vote.find(params[:id])
-    #   if @vote.update(vote_params)
-    #     render :show
-    #   else
-    #     render json: @vote.errors, status: :unprocessable_entity
-    #   end
-    # end
 
     private
       def vote_params

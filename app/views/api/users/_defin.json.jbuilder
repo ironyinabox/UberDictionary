@@ -15,5 +15,4 @@ json.votes do
   end
   count = {up_count: up_count, down_count: down_count}
   json.extract! count, :up_count, :down_count
-
 end
