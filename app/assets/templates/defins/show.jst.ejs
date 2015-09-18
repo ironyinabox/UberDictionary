@@ -12,8 +12,13 @@
     <%= new Date(defin.get('created_at')).toDateString() %>
 </strong>
 <br>
-  <button class="upvote" data-id="<%=defin.get('id') %>">Thumbs Up</button>
-  <%= defin.votes().get('up_count') %>
-  <button class="downvote" data-id="<%=defin.get('id') %>">Thumbs Down</button>
-  <%= defin.votes().get('down_count') %>
+<button class="upvote" data-id="<%=defin.get('id') %>">
+  <strong>Yaaaas <%= defin.votes().get('up_count') %> </strong>
+</button>
+<button class="downvote" data-id="<%=defin.get('id') %>">
+  <strong>Nah, chill   <%= defin.votes().get('down_count') %> </strong>
+</button>
+
+
+
 </li>

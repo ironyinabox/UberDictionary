@@ -19,10 +19,11 @@
  ul, main, i,
  section, img, div, h2, p,
  fieldset, label, textarea,
- span, article, footer, time, small {
+ span, article, footer, time, small, a {
    padding: 0;
    border: 0;
    outline: 0;
+   margin: 0;
    font: inherit;
    color: inherit;
    text-align: inherit;
@@ -38,12 +39,25 @@
 
  body {
    background-color: #EEEEEE;
+   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
  }
+
+ button > strong {
+   position: relative;
+   bottom: 4px;
+   font-size: 15px;
+ }
+
+ .group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
 
  .word {
    margin-top: 20px;
    color: #134FE6;
-   font-family: "Lora", Georgia, Cambria, "Times New Roman", Times, serif;
+   font-family: "Lora", Georgia, "Times New Roman", Times, serif;
    font-weight: bold;
    font-size: 30px;
  }
@@ -53,24 +67,98 @@
  }
 
  .defin-list > li {
-   display: block;
    padding: 20px;
-   margin: 10px 10px;
-   margin-left: 50px;
+   width: 910px;
+   position: relative;
    background-color: white;
- }
-
- .defin {
+   margin: 25px;
    text-indent: 10px;
-   width: 620px;
    min-height: 200px;
+   box-shadow: 1px 1px 2px #DBDBDB;
  }
 
  .defin > strong {
    margin-left: 10px;
  }
+ .defin > strong > a {
+   color:  #134FE6;
+ }
+ .defin > strong > a:hover {
+   color:  #05ff56;
+ }
 
  .app-title {
+   color: white;
    font-size: 40px;
    font-weight: bolder;
  }
+
+ .app-title:hover{
+   color: #EFFF00;
+ }
+
+ .header-bar {
+   height: 130px;
+   color: white;
+   background: #1D2439;
+ }
+
+ .header-content {
+   width: 940px;
+   height: 130px;
+ }
+ .new-def-button {
+   position: relative;
+   right: 300px;
+   bottom: 18px;
+   float: right;
+   height: 50px;
+   width: 50px;
+   text-align: center;
+   font-size: 37px;
+   background: #134FE6;
+   border-radius: 50%;
+   display: inline-block;
+ }
+
+ .new-def-button:hover {
+   color: #05ff56;
+ }
+
+ .downvote{
+   box-shadow: 0 2px 0 black;
+   border-radius: 20px;
+   text-align: center;
+   border: 1px #000 solid;
+   height: 2.5rem;
+   padding-top: 0.5rem;
+   padding-right: 1rem;
+   padding-bottom: 0;
+   padding-left: 0.5rem;
+   border-bottom-left-radius: 0;
+   border-top-left-radius: 0;
+   background-color: #FFFFFF;
+ }
+
+ .upvote {
+    box-shadow: 0 2px 0 black;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px #000 solid;
+    height: 2.5rem;
+    padding-top: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0;
+    padding-left: 1rem;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #FFFFFF;
+ }
+
+.voted {
+  border-right: 0px;
+  box-shadow: 0 0 0 black;
+  position: relative;
+  top: 2px;
+  background-color: #05ff56;
+}

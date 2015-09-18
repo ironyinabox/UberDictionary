@@ -1,21 +1,30 @@
-<div class="app-title">UberDictionary</div>
-<% if logged_in? %>
-  Logged in as: <%=current_user.user_name %>
-  <form class="logout-button" action="<%= session_url %>" method="post">
-      <input type="hidden" name="_method" value="delete">
+<div class="header-bar">
+  <div class="header-content">
+
+
+
+    <div class="app-title"><a href="#" class="app-title">UberDictionary</a></div>
+    <% if logged_in? %>
+      Logged in as: <%=current_user.user_name %>
+      <form class="logout-button" action="<%= session_url %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+          <button> Sign Out </button>
+      </form>
+    <% else %>
+
+    <form class="login-form" action="<%= session_url %>" method="post">
       <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-      <button> Sign Out </button>
-  </form>
-<% else %>
+      <input type="text" name="user[user_email]" placeholder="email...">
+      <input type="password" name="user[password]" placeholder="password...">
+       <br>
+      <button>Log In!</button>
+    </form>
 
-<form class="login-form" action="<%= session_url %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-  <input type="text" name="user[user_email]" placeholder="email...">
-  <input type="password" name="user[password]" placeholder="password...">
-   <br>
-  <button>Log In!</button>
-</form>
+    <a href="#/users/new"> New User?</a>
+    <% end %>
+    <a href="#/defins/new" class="new-def-button"> + </a>
 
-<a href="#/users/new"> New User?</a>
-<% end %>
+  </div>
+</div>
 <div id="content"></div>
