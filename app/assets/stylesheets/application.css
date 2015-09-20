@@ -92,6 +92,11 @@ header {
   display: inline-block;
 }
 
+.header-button:last-child {
+  font-size: 18px;
+  text-align: center;
+}
+
 .header-button:hover {
   color: #05ff56;
 }
