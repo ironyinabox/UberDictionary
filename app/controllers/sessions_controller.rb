@@ -5,12 +5,8 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by_creds(email_input, pass_input)
-    if @user
-      login(@user)
-      redirect_to root_url
-    else
-      redirect_to new_session_url
-    end
+    login(@user) if @user
+    redirect_to root_url
   end
 
   def destroy

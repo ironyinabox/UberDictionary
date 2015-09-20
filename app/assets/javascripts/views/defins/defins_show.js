@@ -2,7 +2,7 @@ UberDictionary.Views.DefinsShow = Backbone.View.extend({
 
   template: JST['defins/show'],
   tagName: 'li',
-  className: 'defin',
+  className: 'defin group',
   events: {
     'click .upvote': 'upvoteDefin',
     'click .downvote': 'downvoteDefin'
@@ -22,23 +22,9 @@ UberDictionary.Views.DefinsShow = Backbone.View.extend({
       defin: this.model,
       vote: this.vote
     });
-    // this.setButton();
     this.$el.html(content);
     return this;
   },
-
-  // setButton: function () {
-  //   debugger
-  //   if (this.vote.get('upvote') === undefined) {
-  //     return;
-  //   } else if (this.vote.get('upvote')) {
-  //     this.$el.find('.upvote').addClass('voted');
-  //     this.$el.find('.downvote').removeClass('voted');
-  //   } else {
-  //     this.$el.find('.downvote').addClass('voted');
-  //     this.$el.find('.upvote').removeClass('voted');
-  //   }
-  // },
 
   upvoteDefin: function (e) {
     e.preventDefault;

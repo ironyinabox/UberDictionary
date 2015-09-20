@@ -1,24 +1,33 @@
-<li class="defin">
-  <div class="word"><%= defin.escape('word') %></div>
+<ul>
+  <li class="word"><%= defin.escape('word') %></li>
   <br>
-  <div class="def"><%= defin.escape('defin') %> </div>
+  <li class="def"><%= defin.escape('defin') %> </li>
   <br>
-  <div class="example"> <%= defin.escape('ex_sentence') %></div> <br>
-  <strong>
-  by <a
-    href="<%='#/users/' + defin.get('author_id')%>">
-    <%= defin.author().get('user_name') %>
+  <li class="example"> <%= defin.escape('ex_sentence') %></li> <br>
+  <li class="authoring-details">
+    by
+    <a href="<%='#/users/' + defin.get('author_id')%>">
+      <%= defin.author().get('user_name') %>
     </a>
     <%= new Date(defin.get('created_at')).toDateString() %>
-</strong>
+  </li>
 <br>
+
+
+
+
 <button class="upvote" data-id="<%=defin.get('id') %>">
-  <strong>Yaaaas <%= defin.votes().get('up_count') %> </strong>
+  <strong class="vote-button-content">
+    Yaaaas <%= defin.votes().get('up_count') %>
+  </strong>
 </button>
 <button class="downvote" data-id="<%=defin.get('id') %>">
-  <strong>Nah, chill   <%= defin.votes().get('down_count') %> </strong>
+  <strong class="vote-button-content">
+    Nah, chill   <%= defin.votes().get('down_count') %>
+  </strong>
 </button>
 
 
 
-</li>
+</ul>
+  <img src="<%=defin.get('img_url')%>" alt="" />

@@ -1,30 +1,38 @@
-<div class="header-bar">
-  <div class="header-content">
+<header>
+  <nav class="header-nav group">
 
+    <h1 class="header-logo">
+      <a href="#">UberDictionary</a>
+    </h1>
 
+    <ul class="header-list">
+      <li>
+        <input type="text" class="search-bar" placeholder="Doesn't work yet...">
+      </li>
+      <li> <a href="#/defins/new" class="header-button"> + </a></li>
+      <li> <a href="#/defins/new" class="header-button"> + </a></li>
+      <li> <a href="#/defins/new" class="header-button"> + </a></li>
+    </ul>
 
-    <div class="app-title"><a href="#" class="app-title">UberDictionary</a></div>
-    <% if logged_in? %>
-      Logged in as: <%=current_user.user_name %>
-      <form class="logout-button" action="<%= session_url %>" method="post">
-          <input type="hidden" name="_method" value="delete">
-          <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-          <button> Sign Out </button>
-      </form>
-    <% else %>
-
-    <form class="login-form" action="<%= session_url %>" method="post">
+  </nav>
+</header>
+<% if logged_in? %>
+  Logged in as: <%=current_user.user_name %>
+  <form class="logout-button" action="<%= session_url %>" method="post">
+      <input type="hidden" name="_method" value="delete">
       <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-      <input type="text" name="user[user_email]" placeholder="email...">
-      <input type="password" name="user[password]" placeholder="password...">
-       <br>
-      <button>Log In!</button>
-    </form>
+      <button> Sign Out </button>
+  </form>
+<% else %>
 
-    <a href="#/users/new"> New User?</a>
-    <% end %>
-    <a href="#/defins/new" class="new-def-button"> + </a>
+<form class="login-form" action="<%= session_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  <input type="text" name="user[user_email]" placeholder="email...">
+  <input type="password" name="user[password]" placeholder="password...">
+   <br>
+  <button>Log In!</button>
+</form>
 
-  </div>
-</div>
+<a href="#/users/new"> New User?</a>
+<% end %>
 <div id="content"></div>

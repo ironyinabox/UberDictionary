@@ -20,13 +20,15 @@ u2 = User.create(
 d1 = u1.defins.create(
   word: 'batarang',
   defin: "It's like a boomerang, except with 100% more bat",
-  ex_sentence: "Ow, he hit me with that batarang!"
+  ex_sentence: "Ow, he hit me with that batarang!",
+  img_url: "http://thingiverse-production-new.s3.amazonaws.com/renders/7d/7b/d1/be/9d/IMG_0725[1_display_large_preview_featured.jpg"
 )
 
 d2 = u1.defins.create(
   word: 'hammers of justice',
   defin: "My fists",
-  ex_sentence: "Let me introduce you to my hammers of justice!"
+  ex_sentence: "Let me introduce you to my hammers of justice!",
+  img_url: "http://www.stmaartenlibrary.org/sites/default/files/imagecache/view-850/blog-photos/my_first_batman_book.jpg"
 )
 
 d3 = u2.defins.create(
