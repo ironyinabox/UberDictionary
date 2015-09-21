@@ -47,11 +47,7 @@ body {
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.vote-button-content {
-  position: relative;
-  bottom: 4px;
-  font-size: 15px;
-}
+
 
 header {
   color: white;
@@ -163,6 +159,8 @@ header {
     color:  #05ff56;
  }
 
+
+
  .downvote {
    box-shadow: 0 2px 0 black;
    border-radius: 20px;
@@ -193,10 +191,64 @@ header {
     background-color: #FFFFFF;
  }
 
+ .vote-button-content {
+   position: relative;
+   bottom: 4px;
+   font-size: 15px;
+ }
+
 .voted {
   border-right: 0px;
   box-shadow: 0 0 0 black;
   position: relative;
   top: 2px;
   background-color: #05ff56;
+}
+
+
+
+
+
+
+.new-word {
+  background: blue;
+}
+
+.new-word > h1 {
+  margin: 38px auto;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 600;
+  width: 170px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #EFFF00;
+  font-size: 28px;
+}
+
+.new-word-form {
+  padding: 20px;
+  width: 800px;
+  background: white;
+  display: block;
+  margin: auto;
+}
+
+.new-word-form > input, .new-word-form > textarea {
+  display: block;
+  font-size: 16px;
+  padding: 20px;
+  width: 94.5%;
+  margin-bottom: 16px;
+}
+
+.new-word-form > textarea  {
+  border: 1px solid #ccc;
+}
+
+.new-word-form > textarea:nth-of-type(1)  {
+  height: 130px;
+}
+.new-word-form > textarea:nth-of-type(2)  {
+  height: 90px;
 }

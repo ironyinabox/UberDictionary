@@ -1,7 +1,4 @@
 class SessionsController < ApplicationController
-  def new
-    @user = User.new
-  end
 
   def create
     @user = User.find_by_creds(email_input, pass_input)

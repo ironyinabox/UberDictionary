@@ -1,23 +1,4 @@
-<header>
-  <nav class="header-nav group">
-
-    <h1 class="header-logo">
-      <a href="#">UberDictionary</a>
-    </h1>
-
-    <ul class="header-list">
-      <li>
-        <input type="text" class="search-bar" placeholder="Doesn't work yet...">
-      </li>
-      <li class="header-button"><a href="#/defins/new"> + </a></li>
-      <li class="header-button"><a href="#/defins/new"> + </a></li>
-      <li class="header-button">
-        <a href="#/users/new">New User</a>
-      </li>
-    </ul>
-
-  </nav>
-</header>
+<div id="header"></div>
 <% if logged_in? %>
   Logged in as: <%=current_user.user_name %>
   <form class="logout-button" action="<%= session_url %>" method="post">
@@ -35,4 +16,5 @@
   <button>Log In!</button>
 </form>
 <% end %>
+
 <div id="content"></div>
