@@ -29,6 +29,13 @@ UberDictionary.Routers.Users = Backbone.Router.extend({
     this._swapView(view);
   },
 
+  signIn: function () {
+    var view = new UberDictionary.Views.SessionNew({
+      collection: this.collection
+    });
+    this._swapView(view);
+  },
+
 
   _swapView: function (view) {
     this._currentView && this._currentView.remove();

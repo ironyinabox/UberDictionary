@@ -3,12 +3,12 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by_creds(email_input, pass_input)
     login(@user) if @user
-    redirect_to root_url
+    render json: @user
   end
 
   def destroy
     logout
-    redirect_to root_url
+      render json: {}
   end
 
   private

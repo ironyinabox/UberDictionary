@@ -76,6 +76,7 @@ header {
   float: left;
 }
 
+
 .header-button {
   margin-left: 15px;
   margin-bottom: 15px;
@@ -89,7 +90,7 @@ header {
 }
 
 .header-button:last-child {
-  font-size: 18px;
+
   text-align: center;
 }
 
