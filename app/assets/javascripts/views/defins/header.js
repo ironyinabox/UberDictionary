@@ -14,7 +14,8 @@ UberDictionary.Views.Header = Backbone.View.extend({
 
   definsSearch: function (e) {
     e.preventDefault();
-    query = this.$(".query").val();
-    Backbone.history.navigate("defins/search", { trigger: true })
+    var target = this.$(".query")
+    var query = target.val();
+    Backbone.history.navigate("defins/search/" + query, { trigger: true })
   }
 });

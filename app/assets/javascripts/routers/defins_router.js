@@ -9,7 +9,7 @@ UberDictionary.Routers.Defins = Backbone.Router.extend({
     '': 'definsIndex',
     'defins/new': 'definsNew',
     'defins/:id': 'definsShow',
-    'defins/search': 'definsSearch'
+    'defins/search/:query': 'definsSearch'
   },
 
   definsIndex: function () {
@@ -19,16 +19,15 @@ UberDictionary.Routers.Defins = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  // definsSearch: function () {
-  //   var searchCollection = UberDictionary.Collections.SearchResults();
-  //   searchCollection.fetch({
-  //     data: { query }
-  //   });
-  //   var view = new UberDictionary.Views.DefinsIndex({
-  //     collection: searchCollection
-  //   });
-  //   this._swapView(view);
-  // },
+  definsSearch: function (query) {
+    var searchCollection = new UberDictionary.Collections.SearchResults();
+    searchCollection.fetch({ data: { query } });
+    
+    var view = new UberDictionary.Views.DefinsIndex({
+      collection: searchCollection
+    });
+    this._swapView(view);
+  },
 
   definsNew: function () {
     var defin = new UberDictionary.Models.Defin();
