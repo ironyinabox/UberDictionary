@@ -8,4 +8,9 @@ class Defin < ActiveRecord::Base
 
   has_many :votes
 
+  include PgSearch
+  pg_search_scope :search_full_text,
+                  against: {word: 'A', defin: 'B', ex_sentence: 'C'},
+                  using: { tsearch: { prefix: true} }
+
 end

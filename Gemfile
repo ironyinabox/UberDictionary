@@ -29,6 +29,8 @@ gem 'backbone-on-rails'
 
 gem 'underscore-rails'
 
+gem 'pg_search'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
