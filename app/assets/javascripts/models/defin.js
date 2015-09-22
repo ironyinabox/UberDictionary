@@ -1,7 +1,7 @@
 UberDictionary.Models.Defin = Backbone.Model.extend({
   urlRoot: "/api/defins",
   toJSON: function () {
-    return { defin: _.clone(this.attributes) }
+    return { defin: _.clone(this.attributes) };
   },
 
   parse: function (res) {
@@ -21,7 +21,7 @@ UberDictionary.Models.Defin = Backbone.Model.extend({
     this._votes = this._votes ||
       new UberDictionary.Collections.Votes([],{ defin: this });
 
-    return this._votes
+    return this._votes;
   },
 
   author: function () {

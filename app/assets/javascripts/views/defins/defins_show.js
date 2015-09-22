@@ -44,7 +44,7 @@ UberDictionary.Views.DefinsShow = Backbone.View.extend({
         that.model.fetch();
       },
       error: function () {
-        alert("Must be signed in to vote!")
+        alert("Must be signed in to vote!");
       }
     });
   }

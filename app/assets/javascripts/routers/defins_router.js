@@ -19,10 +19,10 @@ UberDictionary.Routers.Defins = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  definsSearch: function (query) {
+  definsSearch: function (searchParams) {
     var searchCollection = new UberDictionary.Collections.SearchResults();
-    searchCollection.fetch({ data: { query } });
-    
+    searchCollection.fetch({ data: {query: searchParams} });
+
     var view = new UberDictionary.Views.DefinsIndex({
       collection: searchCollection
     });
