@@ -2,7 +2,8 @@ UberDictionary.Views.Header = Backbone.View.extend({
 
   template: JST['defins/header'],
   events: {
-    'change .query': 'definsSearch'
+    'change .query': 'definsSearch',
+    'click #new-def': 'newDefModal'
   },
 
   render: function () {
@@ -14,8 +15,16 @@ UberDictionary.Views.Header = Backbone.View.extend({
 
   definsSearch: function (e) {
     e.preventDefault();
-    var target = this.$(".query")
-    var query = target.val();
+    var query = this.$(".query").val();
     Backbone.history.navigate("defins/search/" + query, { trigger: true })
+  },
+
+  newDefModal: function () {
+    var defin = new UberDictionary.Models.Defin();
+    var view = new UberDictionary.Views.DefinsNew({
+      model: defin,
+      collection: this.collection
+    });
+    this.$el.append(view.render().$el);
   }
 });

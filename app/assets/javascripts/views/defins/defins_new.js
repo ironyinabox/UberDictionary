@@ -3,7 +3,8 @@ UberDictionary.Views.DefinsNew = Backbone.View.extend({
   template: JST['defins/new'],
 
   events: {
-    'submit form': 'submit'
+    'submit form': 'submit',
+    'click .exit-modal': 'exitModal'
   },
 
   render: function () {
@@ -16,6 +17,7 @@ UberDictionary.Views.DefinsNew = Backbone.View.extend({
     e.preventDefault();
     var that = this;
     var data = $(e.currentTarget).serializeJSON();
+    this.$el.remove();
     this.model.save(data.defin, {
       success: function (defin) {
         that.collection.add(defin);
@@ -26,6 +28,10 @@ UberDictionary.Views.DefinsNew = Backbone.View.extend({
         alert("Must be logged in and complete all fields")
       }
     });
+  },
+
+  exitModal: function () {
+    this.$el.remove();
   }
 
 });

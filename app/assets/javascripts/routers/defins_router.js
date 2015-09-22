@@ -1,13 +1,11 @@
 UberDictionary.Routers.Defins = Backbone.Router.extend({
   initialize: function (options) {
-    this.collection = new UberDictionary.Collections.Defins();
-    this.collection.fetch();
+    this.collection = options.collection;
     this.$rootEl = $(options.rootEl)
   },
 
   routes: {
     '': 'definsIndex',
-    'defins/new': 'definsNew',
     'defins/:id': 'definsShow',
     'defins/search/:query': 'definsSearch'
   },
@@ -21,19 +19,10 @@ UberDictionary.Routers.Defins = Backbone.Router.extend({
 
   definsSearch: function (searchParams) {
     var searchCollection = new UberDictionary.Collections.SearchResults();
-    searchCollection.fetch({ data: {query: searchParams} });
+    searchCollection.fetch({ data: { query: searchParams } });
 
     var view = new UberDictionary.Views.DefinsIndex({
       collection: searchCollection
-    });
-    this._swapView(view);
-  },
-
-  definsNew: function () {
-    var defin = new UberDictionary.Models.Defin();
-    var view = new UberDictionary.Views.DefinsNew({
-      model: defin,
-      collection: this.collection
     });
     this._swapView(view);
   },

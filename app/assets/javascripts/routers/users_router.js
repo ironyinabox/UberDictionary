@@ -1,7 +1,6 @@
 UberDictionary.Routers.Users = Backbone.Router.extend({
   initialize: function (options) {
-    this.collection = new UberDictionary.Collections.Users();
-    this.collection.fetch();
+    this.collection = options.collection;
     this.$rootEl = $(options.rootEl)
   },
 

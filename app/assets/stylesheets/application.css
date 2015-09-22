@@ -14,29 +14,29 @@
  *= require_self
  */
 
- html, body, header, nav, h1,
- ul, main, i,
- section, img, div, h2, p,
- fieldset, label, textarea,
- span, article, footer, time, small, a {
-   padding: 0;
-   border: 0;
-   outline: 0;
-   margin: 0;
-   font: inherit;
-   color: inherit;
-   text-align: inherit;
-   text-decoration: inherit;
-   vertical-align: inherit;
-   box-sizing: inherit;
-   background: transparent;
- }
+html, body, header, nav, h1,
+ul, main, i,
+section, img, div, h2, p,
+fieldset, label, textarea,
+span, article, footer, time, small, a {
+ padding: 0;
+ border: 0;
+ outline: 0;
+ margin: 0;
+ font: inherit;
+ color: inherit;
+ text-align: inherit;
+ text-decoration: inherit;
+ vertical-align: inherit;
+ box-sizing: inherit;
+ background: transparent;
+}
 
- ul {
-   list-style: none;
- }
+ul {
+ list-style: none;
+}
 
- .group:after {
+.group:after {
   content: "";
   display: block;
   clear: both;
@@ -46,8 +46,6 @@ body {
   background-color: #EEEEEE;
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
-
 
 header {
   color: white;
@@ -76,7 +74,6 @@ header {
   float: left;
 }
 
-
 .header-button {
   margin-left: 15px;
   margin-bottom: 15px;
@@ -102,10 +99,6 @@ header {
   text-indent: 10px;
 }
 
-.login-form {
-}
-
-
 .defin-list {
  margin: auto;
 }
@@ -122,8 +115,8 @@ header {
 }
 
 .defin > ul {
-float: left;
-max-width: 620px;
+  float: left;
+  max-width: 620px;
 }
 
 .defin > img {
@@ -200,16 +193,18 @@ max-width: 620px;
   background-color: #05ff56;
 }
 
-
-
-
-
-
 .new-word {
-  background: blue;
+  position: absolute;
+  z-index: 9000;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+}
+.new-word, .new-session, .new-user {
+  background: rgba(0, 50, 200, 0.9);
 }
 
-.new-word > h1 {
+.new-word > h1, .new-session > h1, .new-user > h1 {
   margin: 38px auto;
   text-align: center;
   text-transform: uppercase;
@@ -221,7 +216,7 @@ max-width: 620px;
   font-size: 28px;
 }
 
-.new-word-form {
+.new-word-form, .sign-in-form, .new-user-form {
   padding: 20px;
   width: 800px;
   background: white;
@@ -229,7 +224,10 @@ max-width: 620px;
   margin: auto;
 }
 
-.new-word-form > input, .new-word-form > textarea {
+.new-word-form > input,
+.new-word-form > textarea,
+.sign-in-form > input,
+.new-user-form > input {
   display: block;
   font-size: 16px;
   padding: 20px;
@@ -246,4 +244,22 @@ max-width: 620px;
 }
 .new-word-form > textarea:nth-of-type(2)  {
   height: 90px;
+}
+
+.new-word-form > button {
+  margin-top: 40px;
+  background-color: #EFFF00;
+  color: black;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.exit-modal {
+  font-size: 24px;
+  display: block;
+  margin: auto;
 }
