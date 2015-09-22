@@ -86,6 +86,9 @@ header {
   display: inline-block;
 }
 
+.header-list > li:nth-of-type(4) > a {
+  font-size: 19px;
+}
 .header-button:hover {
   color: #05ff56;
 }
@@ -200,7 +203,7 @@ header {
   height: 100%;
   width: 100%;
 }
-.new-word, .new-session, .new-user {
+.new-word {
   background: rgba(0, 50, 200, 0.9);
 }
 
@@ -214,6 +217,9 @@ header {
   padding-bottom: 10px;
   border-bottom: 2px solid #EFFF00;
   font-size: 28px;
+}
+.new-session > h1, .new-user > h1 {
+  color: black;
 }
 
 .new-word-form, .sign-in-form, .new-user-form {
@@ -246,7 +252,9 @@ header {
   height: 90px;
 }
 
-.new-word-form > button {
+.new-word-form > button,
+.sign-in-form > button,
+.new-user-form > button {
   margin-top: 40px;
   background-color: #EFFF00;
   color: black;
