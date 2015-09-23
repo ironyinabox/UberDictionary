@@ -1,20 +1,34 @@
 <% currentUser = users.get($(".user-id-grab").data('id')); %>
 
 <% if (!!currentUser) { %>
-  Logged in as: <%=currentUser.escape('user_name') %>
+  <div class="welcome">
+    Hello <%=currentUser.escape('user_name') %>!
+    <p>
+      <form class="change-name-form">
+        <input type="text" name="user[user_name]" placeholder="Change username...">
+        <input type="hidden" name="user[id]" value="<%=currentUser.get('id')%>">
+        <button>Save</button>
+      </form>
+      See your <a href="<%= '#users/' + currentUser.get('id') %>">definitions</a>
+    </p>
+  </div>
   <button class="sign-out"> Log Out!</button>
 
 <% } else {%>
   <div class="new-session">
 
-  <h1>Sign in to post new words!</h1>
+    <h1>Sign in to post new words!</h1>
 
-    <form class="sign-in-form">
+    <form class="sign-in-form group">
       <input type="text" name="user[user_email]" placeholder="email...">
       <input type="password" name="user[password]" placeholder="password...">
        <br>
-      <button>Log In!</button> <br>
-      <a href="#/users/new"> New User?</a>
+      <button class="submit-button">Log In!</button> <br>
+      <div class="omniauth group">
+        <a href="#/users/new"> New User?</a>
+        <a href="/auth/twitter">Sign in with Twitter!</a>
+        <a href="/auth/facebook">Sign in with Facebook!</a>
+      </div>
     </form>
 
   </div>

@@ -7,7 +7,8 @@ UberDictionary.Routers.Users = Backbone.Router.extend({
   routes: {
     'users/new': 'usersNew',
     'users/:id': 'usersShow',
-    'session/new': 'signIn'
+    'session/new': 'signIn',
+    '_=_': 'signIn'
   },
 
   usersShow: function (id) {

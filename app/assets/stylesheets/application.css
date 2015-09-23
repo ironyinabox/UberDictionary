@@ -252,9 +252,7 @@ header {
   height: 90px;
 }
 
-.new-word-form > button,
-.sign-in-form > button,
-.new-user-form > button {
+.submit-button {
   margin-top: 40px;
   background-color: #EFFF00;
   color: black;
@@ -270,4 +268,23 @@ header {
   font-size: 24px;
   display: block;
   margin: auto;
+}
+
+.omniauth {
+}
+
+.omniauth > a {
+  font-weight: bold;
+  float: left;
+  display: block;
+  color: white;
+  background: blue;
+  padding: 20px;
+  margin-left: 70px;
+  margin-top: 20px;
+  box-shadow: 0 2px 0 black;
+}
+
+.omniauth > a:hover {
+  color: #05ff56;
 }

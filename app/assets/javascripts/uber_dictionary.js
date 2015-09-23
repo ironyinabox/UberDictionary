@@ -18,7 +18,7 @@ window.UberDictionary = {
 
     new UberDictionary.Routers.Defins({
       rootEl: '#content',
-      collection: definsCollection
+      collection: definsCollection,
     });
 
     new UberDictionary.Routers.Users({
