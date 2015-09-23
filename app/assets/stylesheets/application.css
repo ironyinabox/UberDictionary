@@ -151,8 +151,6 @@ header {
   color:  #05ff56;
 }
 
-
-
 .downvote, .upvote {
  box-shadow: 0 2px 0 black;
  border-radius: 20px;
@@ -268,6 +266,26 @@ header {
   font-size: 24px;
   display: block;
   margin: auto;
+}
+
+.welcome {
+  width: 600px;
+
+  display: block;
+  margin: auto;
+}
+.welcome > form, .welcome > p, .welcome > h1 {
+  padding: 20px;
+  border-bottom: 1px solid black;
+  display: block;
+}
+
+.welcome > p > a:hover {
+  color: #05ff56;
+}
+
+.welcome > p > a {
+  color: #134FE6;
 }
 
 .omniauth {
