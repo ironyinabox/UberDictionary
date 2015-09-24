@@ -86,9 +86,14 @@ header {
   display: inline-block;
 }
 
-.header-list > li:nth-of-type(4) > a {
+.header-list > li:nth-of-type(4) > a,
+.header-list > li:nth-of-type(3) > a {
   font-size: 19px;
 }
+.header-list > li:nth-of-type(2) > a {
+  cursor: pointer;
+}
+
 .header-button:hover {
   color: #05ff56;
 }
@@ -167,8 +172,26 @@ header {
 }
 
 .defin-footer {
+  margin-top: 10px;
   float: left;
   width: 100%;
+}
+
+.upload-img-button {
+  box-shadow: 0 2px 0 black;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px #000 solid;
+  height: 40px;
+  padding-top: 8px;
+  width: 40px;
+  font-size: 18px;
+  float: right;
+  margin-right: 60px;
+}
+
+.upload-img-button:hover {
+    background: #05ff56;
 }
 
 .upvote {
@@ -189,23 +212,6 @@ header {
  position: relative;
  bottom: 4px;
  font-size: 15px;
-}
-
-.upload-img-button {
-  box-shadow: 0 2px 0 black;
-  border-radius: 20px;
-  text-align: center;
-  border: 1px #000 solid;
-  height: 40px;
-  padding-top: 8px;
-  width: 40px;
-  font-size: 18px;
-  float: right;
-  margin-right: 60px;
-}
-
-.upload-img-button:hover {
-    background: #05ff56;
 }
 
 .new-word, .new-img {
