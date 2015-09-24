@@ -5,7 +5,8 @@ UberDictionary.Views.DefinsShow = Backbone.View.extend({
   className: 'defin group',
   events: {
     'click .upvote': 'upvoteDefin',
-    'click .downvote': 'downvoteDefin'
+    'click .downvote': 'downvoteDefin',
+    'click .upload-img-button': 'uploadImgModal'
   },
 
   initialize: function (options) {
@@ -47,5 +48,12 @@ UberDictionary.Views.DefinsShow = Backbone.View.extend({
         alert("Must be signed in to vote!");
       }
     });
+  },
+
+  uploadImgModal: function (e) {
+    var view = new UberDictionary.Views.ImgUpload({
+      model: this.model
+    });
+    $('body').append(view.render().$el);
   }
 });

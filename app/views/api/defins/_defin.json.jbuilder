@@ -3,6 +3,8 @@ json.extract!(
   :id, :word, :defin, :ex_sentence, :img_url, :author_id, :created_at, :updated_at
 )
 
+json.image asset_path(defin.image.url)
+
 json.author do
   json.extract! defin.author, :user_name, :id
 end
@@ -15,5 +17,4 @@ json.votes do
   end
   count = {up_count: up_count, down_count: down_count}
   json.extract! count, :up_count, :down_count
-
 end

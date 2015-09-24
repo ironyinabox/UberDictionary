@@ -6,7 +6,6 @@ UberDictionary.Routers.Defins = Backbone.Router.extend({
 
   routes: {
     '': 'definsIndex',
-    'defins/:id': 'definsShow',
     'defins/search/:query': 'definsSearch'
   },
 

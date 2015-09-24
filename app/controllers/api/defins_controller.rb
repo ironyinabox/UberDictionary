@@ -24,6 +24,15 @@ module Api
       end
     end
 
+    def update
+      @defin = Defin.find(params[:id])
+      if @defin.update(defin_params)
+        render :show
+      else
+        render json: @defin.errors, status: :unprocessable_entity
+      end
+    end
+
     def destroy
       @defin = Defin.find(params[:id])
       @defin.destroy
@@ -32,7 +41,7 @@ module Api
 
     private
     def defin_params
-      params.require(:defin).permit(:word, :defin, :ex_sentence, :img_url)
+      params.require(:defin).permit(:word, :defin, :ex_sentence, :img_url, :image)
     end
   end
 end

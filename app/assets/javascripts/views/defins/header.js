@@ -25,6 +25,6 @@ UberDictionary.Views.Header = Backbone.View.extend({
       model: defin,
       collection: this.collection
     });
-    this.$el.append(view.render().$el);
+    $('body').append(view.render().$el);
   }
 });

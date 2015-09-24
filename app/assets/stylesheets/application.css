@@ -119,7 +119,8 @@ header {
 
 .defin > ul {
   float: left;
-  max-width: 620px;
+  margin-top: 20px;
+  width: 600px;
 }
 
 .defin > img {
@@ -129,7 +130,6 @@ header {
 }
 
 .word {
- margin-top: 20px;
  color: #134FE6;
  font-family: "Lora", Georgia, "Times New Roman", Times, serif;
  font-weight: bold;
@@ -166,6 +166,11 @@ header {
  background-color: #05ff56
 }
 
+.defin-footer {
+  float: left;
+  width: 100%;
+}
+
 .upvote {
   padding-right: 0.5rem;
   padding-left: 1rem;
@@ -186,26 +191,37 @@ header {
  font-size: 15px;
 }
 
-.voted {
-  border-right: 0px;
-  box-shadow: 0 0 0 black;
-  position: relative;
-  top: 2px;
-  background-color: #05ff56;
+.upload-img-button {
+  box-shadow: 0 2px 0 black;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px #000 solid;
+  height: 40px;
+  padding-top: 8px;
+  width: 40px;
+  font-size: 18px;
+  float: right;
+  margin-right: 60px;
 }
 
-.new-word {
+.upload-img-button:hover {
+    background: #05ff56;
+}
+
+.new-word, .new-img {
   position: absolute;
   z-index: 9000;
   top: 0px;
   height: 100%;
   width: 100%;
-}
-.new-word {
   background: rgba(0, 50, 200, 0.9);
 }
 
-.new-word > h1, .new-session > h1, .new-user > h1 {
+
+.new-word > h1,
+.new-session > h1,
+.new-user > h1,
+.new-img > h1 {
   margin: 38px auto;
   text-align: center;
   text-transform: uppercase;
@@ -216,11 +232,17 @@ header {
   border-bottom: 2px solid #EFFF00;
   font-size: 28px;
 }
+
+.new-img > p {
+  text-align: center;
+  color: white;
+}
+
 .new-session > h1, .new-user > h1 {
   color: black;
 }
 
-.new-word-form, .sign-in-form, .new-user-form {
+.new-word-form, .sign-in-form, .new-user-form, .img-upload-form {
   padding: 20px;
   width: 800px;
   background: white;
