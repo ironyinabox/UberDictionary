@@ -299,11 +299,11 @@ header {
   font-size: 24px;
   display: block;
   margin: auto;
+  margin-top: 20px;
 }
 
 .welcome {
   width: 600px;
-
   display: block;
   margin: auto;
 }
