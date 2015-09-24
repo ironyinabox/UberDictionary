@@ -227,7 +227,8 @@ header {
 .new-word > h1,
 .new-session > h1,
 .new-user > h1,
-.new-img > h1 {
+.new-img > h1,
+.user-show {
   margin: 38px auto;
   text-align: center;
   text-transform: uppercase;
@@ -237,6 +238,10 @@ header {
   padding-bottom: 10px;
   border-bottom: 2px solid #EFFF00;
   font-size: 28px;
+}
+
+.user-show {
+  color: black;
 }
 
 .new-img > p {
