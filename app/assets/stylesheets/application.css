@@ -215,7 +215,7 @@ header {
 }
 
 .new-word, .new-img {
-  position: absolute;
+  position: fixed;
   z-index: 9000;
   top: 0px;
   height: 100%;
