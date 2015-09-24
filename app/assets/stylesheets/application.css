@@ -117,12 +117,12 @@ header {
  position: relative;
  background-color: white;
  margin: 25px auto;
- text-indent: 10px;
  min-height: 200px;
  box-shadow: 1px 1px 2px #DBDBDB;
 }
 
 .defin > ul {
+  margin-left: 10px;
   float: left;
   margin-top: 20px;
   width: 600px;
