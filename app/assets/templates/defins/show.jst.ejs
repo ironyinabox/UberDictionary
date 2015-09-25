@@ -23,16 +23,16 @@
 <div class="defin-footer">
   <button class="upvote" data-id="<%=defin.get('id') %>">
     <strong class="vote-button-content">
-      Yas! <%= defin.votes().get('up_count') %>
+      <i class="fa fa-thumbs-o-up"></i> <%= defin.votes().get('up_count') %>
     </strong>
   </button>
 
   <button class="downvote" data-id="<%=defin.get('id') %>">
     <strong class="vote-button-content">
-      Nah..   <%= defin.votes().get('down_count') %>
+      <i class="fa fa-thumbs-o-down"></i> <%= defin.votes().get('down_count') %>
     </strong>
   </button>
 
-  <button class="upload-img-button"> img </button>
+  <button class="upload-img-button"> <i class="fa fa-camera"></i> </button>
 
 </div>
