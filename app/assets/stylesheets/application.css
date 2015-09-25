@@ -214,9 +214,14 @@ header {
 }
 
 .vote-button-content {
- position: relative;
- bottom: 4px;
- font-size: 15px;
+  display: block;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 15px;
+}
+.vote-button-content > i {
+
+ font-size: 20px;
 }
 
 .new-word, .new-img {
