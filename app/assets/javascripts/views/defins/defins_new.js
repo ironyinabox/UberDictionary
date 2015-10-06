@@ -2,9 +2,11 @@ UberDictionary.Views.DefinsNew = Backbone.View.extend({
 
   template: JST['defins/new'],
 
+  className: 'new-word',
+
   events: {
-    'submit form': 'submit',
-    'click .exit-modal': 'exitModal'
+    'click .exit-modal': 'exitModal',
+    'submit form': 'submit'
   },
 
   render: function () {
@@ -30,8 +32,8 @@ UberDictionary.Views.DefinsNew = Backbone.View.extend({
     });
   },
 
-  exitModal: function () {
+  exitModal: function (e) {
+    e.preventDefault();
     this.$el.remove();
   }
-
 });
