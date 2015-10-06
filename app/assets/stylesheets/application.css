@@ -242,6 +242,10 @@ header {
   background: rgba(0, 50, 200, 0.9);
 }
 
+.new-img {
+  position: fixed;
+}
+
 
 .new-word > h1,
 .new-session > h1,
