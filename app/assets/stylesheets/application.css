@@ -242,12 +242,14 @@ header {
   background: rgba(0, 50, 200, 0.9);
 }
 
+
+
 .new-img {
   position: fixed;
 }
 
 
-.new-word > h1,
+.container > h1,
 .new-session > h1,
 .new-user > h1,
 .new-img > h1,
@@ -267,7 +269,7 @@ header {
   color: black;
 }
 
-.new-img > p {
+.container > p {
   text-align: center;
   color: white;
 }
@@ -275,6 +277,7 @@ header {
 .new-session > h1, .new-user > h1 {
   color: black;
 }
+
 
 .new-word-form, .sign-in-form, .new-user-form, .img-upload-form {
   padding: 20px;
@@ -361,4 +364,15 @@ header {
 
 .omniauth > a:hover {
   color: #05ff56;
+}
+
+.container {
+  transition: transform .5s, opacity .5s;
+  opacity: 0;
+  transform: translateY(-200%);
+}
+.transition {
+  transition: transform .5s, opacity .5s;
+  opacity: 1;
+  transform: translateY(0%);
 }

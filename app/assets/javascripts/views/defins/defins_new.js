@@ -12,7 +12,12 @@ UberDictionary.Views.DefinsNew = Backbone.View.extend({
   render: function () {
     var content = this.template({ defin: this.model });
     this.$el.html(content);
+    setTimeout(this.transition, 1);
     return this;
+  },
+
+  transition: function () {
+    $('.container').toggleClass("transition");
   },
 
   submit: function (e) {
@@ -34,6 +39,10 @@ UberDictionary.Views.DefinsNew = Backbone.View.extend({
 
   exitModal: function (e) {
     e.preventDefault();
-    this.$el.remove();
+    var that = this;
+    this.transition();
+    setTimeout(function () {
+      that.$el.remove();
+    }, 200);
   }
 });

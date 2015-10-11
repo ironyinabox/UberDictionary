@@ -11,7 +11,12 @@ UberDictionary.Views.ImgUpload = Backbone.View.extend({
   render: function () {
     var content = this.template({ defin: this.model });
     this.$el.html(content);
+    setTimeout(this.transition, 1);
     return this;
+  },
+
+  transition: function () {
+    $('.container').toggleClass("transition");
   },
 
   submitPhoto: function (e) {
@@ -27,7 +32,12 @@ UberDictionary.Views.ImgUpload = Backbone.View.extend({
     });
   },
 
-  exitModal: function () {
-    this.$el.remove();
+  exitModal: function (e) {
+    e.preventDefault();
+    var that = this;
+    this.transition();
+    setTimeout(function () {
+      that.$el.remove();
+    }, 200);
   }
 });
