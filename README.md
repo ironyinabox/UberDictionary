@@ -1,6 +1,6 @@
 # UberDictionary
 
-[Live]: http://uberdictionary.herokuapp.com/
+[Live] (http://uberdictionary.herokuapp.com/)
 
 ## Minimum Viable Product
 UberDictionary is a clone of UrbanDictionary built on Rails and Backbone. Users can:
